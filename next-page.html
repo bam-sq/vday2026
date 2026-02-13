@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page</title>
+    <style>
+        body { background: black; color: #00ff00; font-family: 'Courier New', monospace; text-align: center; padding: 20%; }
+        #music-controls { margin-top: 20px; display: none; } /* Hidden by default; shown if autoplay fails */
+    </style>
+</head>
+<body>
+
+	<!-- Fallback controls (shown if autoplay fails) -->
+    <div id="music-controls">
+        <button onclick="playMusic()">Play Music</button>
+    </div>
+	
+    <h1>See you on February 14!</h1>
+    <p>Dear Charmaigne, <br /> Thank you so much for saying yes. I was genuinely so worried about asking you out 2 years ago, and now I have the privilege 
+	of asking you out again and again. When I look at you, I see my future, a future I want to build with you and spend with you. Ever since I fell in love
+	with you, I understood the saying "With love, water is enough. Without love, food does not satisfy." Hindi ko naintindihan yung sinasabi ng magulang ko
+	na basta makita lang kaming kumakain, okay na sila. Hindi ko yun naintindihan until nakita kitang kumakain habang pinapanood kita. It wasn't about the food,
+	it was about the joy and satisfaction of seeing someone you love enjoy something. I want to keep seeing your smile until I am no longer able to see. I want 
+	to hear your laugh until my hearing grows dull. I want to spend the rest of my life with you, not just because I want to, but because I need to. I always
+	believed that being dependent on someone else as your "missing half" was stupid. That changed when I met you. Whenever we're together, I feel so full and 
+	complete, and the moment you leave, I feel as though my soul has been ripped to shreds. That is a feeling that I no longer want to experience. You complete me.
+	That's the truth I preach. I love you. I love you so much it hurts when I'm not with you. I was never like this, baby. You turned me into this kind of person!
+	So you have to take responsibility!!!! HEHEHEHEHE HAPPY VALENTINE'S DAY BABYYYY!!! I LOVE YOU SO MUCHHHH MWAMWAMWAMWAMWAMWA!!!!</p>
+
+    <!-- Background music -->
+    <audio id="background-music" src="tangled.mp3" autoplay loop preload="auto">
+        Your browser does not support the audio element. Download <a href="tangled.mp3">tangled.mp3</a> to play manually.
+    </audio>
+
+    
+
+    <script>
+        const audio = document.getElementById('background-music');
+        const controls = document.getElementById('music-controls');
+
+        // Attempt autoplay on load
+        audio.play().then(() => {
+            // Autoplay succeeded - hide controls
+            controls.style.display = 'none';
+        }).catch(() => {
+            // Autoplay blocked - show controls
+            controls.style.display = 'block';
+        });
+
+        // Function for manual play button
+        function playMusic() {
+            audio.play();
+            controls.style.display = 'none'; // Hide after playing
+        }
+    </script>
+</body>
+</html>
